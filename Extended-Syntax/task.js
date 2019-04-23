@@ -39,6 +39,7 @@ function askDrink(name,dateOfBirthday){
     // код для задачи №2 писать здесь
     //console.log(result)
     //return result;
+
 }
 
 function calculateAverageRating(){
@@ -50,4 +51,13 @@ function calculateAverageRating(){
 function getAverageMark(marks){
     // код для задачи №3 писать здесь
     //return averageMark;
+    let summarks, avMark;
+    if (marks.length > 5) {
+        console.log('Оценок больше 5');
+        marks.slice(0, 5);
+          for (let j = 0; j < marks.length; j++) {
+              summarks += marks[i]; 
+          }
+         avMark = summarks / marks.length;
+    }
 }
