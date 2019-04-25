@@ -25,6 +25,7 @@ function getResult(a,b,c){
         x1 = (-b + Math.sqrt(discriminant)) / (2 * a);
         x2 = (-b - Math.sqrt(discriminant)) / (2 * a);
         console.log(x1, x2);
+        return x1, x2;
     }
 }
 
@@ -43,10 +44,12 @@ function askDrink(name,dateOfBirthday){
     let now = new Date();
     let yearNow = today.getFullYear();
     let years = yearNow - yearOfBirthday;
-    if (years > 18) {
-        console.log('Не желаете ли олд-фэшн, ${name}');        
+    if (years >= 18) {
+        console.log('Не желаете ли олд-фэшн, ${name}'); 
+        return years;       
     } else if (years < 18) {
         console.log('Сожалею, ${name}, но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!');
+        return years;
     }
 }
 
@@ -67,5 +70,12 @@ function getAverageMark(marks){
               summarks += marks[i]; 
           }
          avMark = summarks / marks.length;
+         return marks, avMark;
+    } if else (marks.length < 5) {
+        for (let j = 0; j < marks.length; j++) {
+            summarks += marks[i]; 
+        }
+       avMark = summarks / marks.length;
+       return marks, avMark;
     }
 }
