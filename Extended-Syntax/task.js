@@ -1,4 +1,4 @@
-
+"use strict";
 
 function calculateQuadraticEquation(){
     let a = +window.a.value;
@@ -13,10 +13,10 @@ function calculateQuadraticEquation(){
 function getResult(a,b,c){
     // код для задачи №1 писать здесь
     //return x;
-    "use strict";
     discriminant = Math.pow(b, 2) - 4 * a * c;
     if (discriminant < 0) {
         console.log('Корней нет');
+        return 'Корней нет';
     } else if (discriminant === 0) {
         x = -b / (2 * a);
         console.log(x);
@@ -24,8 +24,9 @@ function getResult(a,b,c){
     } else if (discriminant > 0) {
         x1 = (-b + Math.sqrt(discriminant)) / (2 * a);
         x2 = (-b - Math.sqrt(discriminant)) / (2 * a);
-        console.log(x1, x2);
-        return x1, x2;
+        x = [x1, x2];
+        console.log(x);
+        return x;
     }
 }
 
@@ -46,10 +47,10 @@ function askDrink(name,dateOfBirthday){
     let years = yearNow - yearOfBirthday;
     if (years >= 18) {
         console.log('Не желаете ли олд-фэшн, ${name}'); 
-        return years;       
+        return 'Не желаете ли олд-фэшн, ${name}';       
     } else if (years < 18) {
         console.log('Сожалею, ${name}, но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!');
-        return years;
+        return 'Сожалею, ${name}, но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!';
     }
 }
 
@@ -62,20 +63,14 @@ function calculateAverageRating(){
 function getAverageMark(marks){
     // код для задачи №3 писать здесь
     //return averageMark;
-    let summarks, avMark;
+    let summarks, averageMark;
     if (marks.length > 5) {
         console.log('Оценок больше 5');
         marks.slice(0, 5);
-          for (let j = 0; j < marks.length; j++) {
-              summarks += marks[i]; 
-          }
-         avMark = summarks / marks.length;
-         return marks, avMark;
-    } if else (marks.length < 5) {
-        for (let j = 0; j < marks.length; j++) {
-            summarks += marks[i]; 
-        }
-       avMark = summarks / marks.length;
-       return marks, avMark;
     }
+    for (let i = 0; i < marks.length; i++) {
+        summarks += marks[i]; 
+    }
+   averageMark = summarks / marks.length;
+   return averageMark;
 }
