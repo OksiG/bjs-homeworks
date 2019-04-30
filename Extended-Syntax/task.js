@@ -67,7 +67,7 @@ function getAverageMark(marks){
     let averageMark = 0;
     if (marks.length > 5) {
         console.log('Оценок больше 5');
-        marks = marks.splice(5);
+        marks.splice(5);
     }
     for (let i = 0; i < marks.length; i++) {
         summarks += marks[i]; 
