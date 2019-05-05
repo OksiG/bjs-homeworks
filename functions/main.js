@@ -3,7 +3,11 @@
 function getSolutions( a, b, c ) {
     let d = Math.pow(b, 2) - 4 * a * c;
     if (d < 0) {
-        return 'D:' + d;
+        let answer = {
+            roots: 'корней нет',
+            D: d
+        }
+        return answer;
     } else if (d === 0) {
         let x1 = -b / (2 * a);
         let answer = {
@@ -25,9 +29,16 @@ function getSolutions( a, b, c ) {
 console.log(getSolutions(1, 2, 1));
 
 function showSolutionsMessage( a, b, c ) {
-    let result = getSolutions();
+    let result = getSolutions(1, 2, 1);
     console.log(`Вычисляем корни квадратного уравнения ${a}x² + ${b}x + ${c}`);
-    console.log(`Значение дискриминанта: ${result}`);
+    console.log(`Значение дискриминанта: ${result.D}`);
+    if (result.d < 0) {
+        console.log('Уравнение не имеет вещественных корней');
+    } else if (result.d === 0) {
+        console.log(`Уравнение имеет один корень X₁ = ${result.roots}`);
+    } else if (result.d > 0) {
+        console.log(`Уравнение имеет два корня. X₁ = ${result.x1}, X₂ = ${result.x2}`);
+    }
 }
 console.log(showSolutionsMessage(1, 2, 1));
 
@@ -43,42 +54,30 @@ getAverageScore('algebra:', [ 2, 4, 5, 2, 3, 4]);
 
 //Задание 3
 function getPersonData( secretData ) {
-    let firstName = aaa;
-    let lastName = bbb;
-        function returnName (aaa, bbb) {
-            if (aaa && bbb === 0) {
-                aaa = 'Родриго';
-                bbb = 'Родриго';
-                console.log(aaa, bbb);
-                return aaa, bbb;
-            } else if (aaa === 0 && bbb === 1) {
-                aaa = 'Родриго';
-                bbb = 'Эмильо';
-                console.log(aaa, bbb);
-                return aaa, bbb;
-            } else if (aaa === 1 && bbb === 0) {
-                aaa = 'Эмильо';
-                bbb = 'Родриго';
-                console.log(aaa, bbb);
-                return aaa, bbb;
-            } else if (aaa === 1 && bbb === 1) {
-                aaa = 'Эмильо';
-                bbb = 'Эмильо';
-                console.log(aaa, bbb);
-                return aaa, bbb;
-            }
-        }
     secretData = {
-        firstName,
-        lastName
+        aaa: returnName(number),
+        bbb: returnName(number)
     }
+    let a = {
+        firstName: secretData.aaa,
+        lastName: secretData.bbb
+    }
+    console.log(a.firstName, a.lastName);
+    return a;
 }
 
-function returnName( aaa, bbb) {
-    aaa = 1 ? 'Эмильо' : 'Родриго';
-    bbb = 1 ? 'Эмильо' : 'Родриго';
-    
-    return aaa, bbb;
+function returnName(number) {
+    if (number === 0) {
+        console.log('Родриго');
+        return number;
+    } else if (number === 1){
+        console.log('Эмильо');
+        return number;
+    }
 }
-returnName(1, 0);
+console.log(getPersonData ({
+    aaa: 1,
+    bbb: 1
+}));
+
 
