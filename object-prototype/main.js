@@ -10,13 +10,15 @@ function checkBirthday(birthday) {
     // код для задачи №1 писать здесь
     let now = Date.now();
     new Date(1993, 0, 26, 12, 00);
-    let birthday = Date.now(Date);
-    let diff = now - birthday;
+    let birthdayN = new Date(birthday);
+    let diff = now - birthdayN;
     let age = diff / Date.now();
     if ( age >= 18) {
-       return 'Клиент совершеннолетний';
+        console.log('Клиент совершеннолетний');
+       return true;
     } else {
-        return 'Клиент НЕ совершеннолетний';
+        console.log('Клиент НЕ совершеннолетний')
+        return false;
     }   
 }
 
@@ -32,7 +34,7 @@ function initPrintAnimalSound() {
 
 function getAnimalSound(animal) {
     // код для задачи №2 писать здесь
-    getAnimalSound.prototype = initPrintAnimalSound();
+    let sound = animal.sound;
     if (animal === undefined) {
         return null;
     } else if (animal !== undefined) {
