@@ -59,12 +59,14 @@ getAverageScore({'algebra: [ 2, 4, 5, 2, 3, 4]});
 //Задание 3
 function getPersonData( secretData ) {
     secretData = {
-        aaa: returnName(number),
-        bbb: returnName(number)
+        aaa: 1,
+        bbb: 1
     }
+    let x = returnName(secretData.aaa);
+    let y = returnName(secretData.bbb)
     let a = {
-        firstName: secretData.aaa,
-        lastName: secretData.bbb
+        firstName: x,
+        lastName: y
     }
     console.log(a.firstName, a.lastName);
     return a;
@@ -72,13 +74,12 @@ function getPersonData( secretData ) {
 
 function returnName(number) {
     if (number === 0) {
-        console.log('Родриго');
-        return number;
+        return 'Родриго';
     } else if (number === 1){
-        console.log('Эмильо');
-        return number;
+        return 'Эмильо';
     }
 }
+
 console.log(getPersonData ({
     aaa: 1,
     bbb: 1
