@@ -18,9 +18,9 @@ function getSolutions( a, b, c ) {
     } else if (d > 0) {
         let x1 = (-b + Math.sqrt(d)) / (2 * a);
         let x2 = (-b - Math.sqrt(d)) / (2 * a);
-        let x = [x1, x2];
         let answer = {
-            roots: x,
+            root1: x1,
+            root2: x2,
             D: d 
         }
         return answer;
@@ -32,12 +32,12 @@ function showSolutionsMessage( a, b, c ) {
     let result = getSolutions(1, 2, 1);
     console.log(`Вычисляем корни квадратного уравнения ${a}x² + ${b}x + ${c}`);
     console.log(`Значение дискриминанта: ${result.D}`);
-    if (result.d < 0) {
+    if (result.D < 0) {
         console.log('Уравнение не имеет вещественных корней');
-    } else if (result.d === 0) {
+    } else if (result.D === 0) {
         console.log(`Уравнение имеет один корень X₁ = ${result.roots}`);
-    } else if (result.d > 0) {
-        console.log(`Уравнение имеет два корня. X₁ = ${result.x1}, X₂ = ${result.x2}`);
+    } else if (result.D > 0) {
+        console.log(`Уравнение имеет два корня. X₁ = ${result.root1}, X₂ = ${result.root2}`);
     }
 }
 console.log(showSolutionsMessage(1, 2, 1));

@@ -17,8 +17,9 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
     function isNumeric(n) {
         return !isNaN(parseFloat(n)) && isFinite(n);
       }
-    if (isNumeric (percent) === false) {
-        console.log('Данные указаны не верно! Введите процент заново');
+
+     if (isNumeric (percent) === false) {
+       console.log('Данные указаны не верно! Введите процент заново');
     } else if (percent > 100) {
         console.log('Данные указаны не верно! Процентная ставка не может быть более 100%')
     }  else if (isNumeric (contribution) === false) {
@@ -33,10 +34,13 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
     let p = percent / 100 / 12;
     let payMounth = AmountWithoutContribution * (p + p / ((Math.pow( (1 + p), date)) - 1));
     let totalAmount = payMounth * date;
+
     console.log(Math.ceil(totalAmount * 100) / 100);
+    
     return totalAmount;
     }
-calculateTotalMortgage (10, 1000, 50000, 12);
+
+    calculateTotalMortgage (10, 1000, 50000, 12);
 
 
 function sayHello() {
@@ -51,15 +55,11 @@ function getGreeting(name) {
     //return greeting;
     'use strict';
     let greeting = name;
-    if ( name === '') {
-        name = 'Аноним';
-    } else if ( name === undefined) {
-        name = 'Аноним';
-    } else if ( name === null) {
-        name = 'Аноним';
-    }
+    if ( greeting === '' || greeting === undefined || greeting === null) {
+        greeting = 'Аноним';
+    } 
 
-    console.log(`Привет, мир! Меня зовут ${name}`);
+    console.log(`Привет, мир! Меня зовут ${greeting}`);
     return greeting;
 }
 getGreeting('');
