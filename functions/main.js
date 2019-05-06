@@ -4,7 +4,7 @@ function getSolutions( a, b, c ) {
     let d = Math.pow(b, 2) - 4 * a * c;
     if (d < 0) {
         let answer = {
-            roots: 'корней нет',
+            roots: [],
             D: d
         }
         return answer;
@@ -26,10 +26,10 @@ function getSolutions( a, b, c ) {
         return answer;
     }
 }
-console.log(getSolutions(1, 2, 1));
+console.log(getSolutions(1, 2, 3));
 
 function showSolutionsMessage( a, b, c ) {
-    let result = getSolutions(1, 2, 1);
+    let result = getSolutions(a, b, c);
     console.log(`Вычисляем корни квадратного уравнения ${a}x² + ${b}x + ${c}`);
     console.log(`Значение дискриминанта: ${result.D}`);
     if (result.D < 0) {
@@ -40,17 +40,21 @@ function showSolutionsMessage( a, b, c ) {
         console.log(`Уравнение имеет два корня. X₁ = ${result.root1}, X₂ = ${result.root2}`);
     }
 }
-console.log(showSolutionsMessage(1, 2, 1));
+console.log(showSolutionsMessage(1, 2, 3));
 
 //Задание 2
-function getAverageScore(schoolSubject, ...data) {
+function getAverageScore( data ) {
+    data = {
+        schoolSubject: text,
+        marks: []
+    }
     let text = `${schoolSubject}`;    
     for (let i = 0; i < data.length; i++) {
             text += `${data[i]}`
         }
             console.log (text);
     };
-getAverageScore('algebra:', [ 2, 4, 5, 2, 3, 4]);
+getAverageScore({'algebra: [ 2, 4, 5, 2, 3, 4]});
 
 //Задание 3
 function getPersonData( secretData ) {
