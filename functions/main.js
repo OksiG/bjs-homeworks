@@ -45,16 +45,36 @@ console.log(showSolutionsMessage(1, 2, 3));
 //Задание 2
 function getAverageScore( data ) {
     data = {
-        schoolSubject: text,
-        marks: []
+        schoolSubject: [...marks]
     }
-    let text = `${schoolSubject}`;    
-    for (let i = 0; i < data.length; i++) {
-            text += `${data[i]}`
+    
+    return {
+        schoolSubject: averageRating(...marks),
+        average: function () {
+            let average = 0;
+            let sumSchoolSubject = 0;
+            let sumAverageRating = 0;
+            for (let i = 0; i < schoolSubject.length; i++) {
+                sumSchoolSubject += schoolSubject[i];
+                sumAverageRating += averageRating[i];
+            }
+            average = sumAverageRating / sumSchoolSubject;
+            return average;
         }
-            console.log (text);
     };
-getAverageScore({'algebra: [ 2, 4, 5, 2, 3, 4]});
+};
+console.log(getAverageScore({algebra: [ 2, 4, 5, 2, 3, 4]}));
+
+function averageRating(...marks) {
+    let averageRating = 0;
+    let sumMarks = 0;
+    for (let i = 0; i < marks.length; i++) {
+        sumMarks += marks[i];
+    }
+    averageRating = sumMarks / marks.length;
+    return averageRating;
+}
+console.log(averageRating(1,2,3,4,5));
 
 //Задание 3
 function getPersonData( secretData ) {
