@@ -18,9 +18,9 @@ function getSolutions( a, b, c ) {
     } else if (d > 0) {
         let x1 = (-b + Math.sqrt(d)) / (2 * a);
         let x2 = (-b - Math.sqrt(d)) / (2 * a);
+        let x =  [x1, x2]
         let answer = {
-            root1: x1,
-            root2: x2,
+            roots: x,
             D: d 
         }
         return answer;
@@ -37,7 +37,7 @@ function showSolutionsMessage( a, b, c ) {
     } else if (result.D === 0) {
         console.log(`Уравнение имеет один корень X₁ = ${result.roots}`);
     } else if (result.D > 0) {
-        console.log(`Уравнение имеет два корня. X₁ = ${result.root1}, X₂ = ${result.root2}`);
+        console.log(`Уравнение имеет два корня. X₁ = ${result.roots[0]}, X₂ = ${result.roots[1]}`);
     }
 }
 console.log(showSolutionsMessage(1, 2, 3));
