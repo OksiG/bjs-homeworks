@@ -62,14 +62,10 @@ function getPersonData( secretData ) {
         aaa: 1,
         bbb: 1
     }
-    let x = returnName(secretData.aaa);
-    let y = returnName(secretData.bbb)
-    let a = {
-        firstName: x,
-        lastName: y
-    }
-    console.log(a.firstName, a.lastName);
-    return a;
+    return {
+        firstName: returnName(secretData.aaa),
+        lastName: returnName(secretData.bbb)
+    };
 }
 
 function returnName(number) {
