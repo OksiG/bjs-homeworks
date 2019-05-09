@@ -44,13 +44,44 @@ console.log(showSolutionsMessage(1, 2, 3));
 
 //Задание 2
 function getAverageScore( data ) {
-    data = {
-        schoolSubject: [...marks]
+    var counter = 0;
+    var sumSubject = 0;
+
+    for (var key in data) {
+         sumSubject = counter++;
     }
-    
-    return {
-        schoolSubject: averageRating(...marks),
-        average: function () {
+
+    alert(sumSubject);
+
+return {
+algebra: averageRating( data.algebra)
+};
+}
+
+function averageRating(marks) {
+let averageRating = 0;
+let sumMarks = 0;
+for (let i = 0; i < marks.length; i++) {
+sumMarks += marks[i];
+}
+averageRating = sumMarks / marks.length;
+return averageRating;
+}
+
+console.log(getAverageScore({
+    algebra: [ 2, 4, 5, 2, 3, 4],
+    geometry: [ 2, 4, 5],
+    russian: [ 3, 3, 4, 5],
+    physics: [ 5, 5],
+    music: [ 2, 2, 6],
+    english: [ 4, 4, 3],
+    poetry: [ 5, 3, 4],
+    chemistry: [ 2],
+    french: [ 4, 4]
+}));
+
+
+average: function () {
             let average = 0;
             let sumSchoolSubject = 0;
             let sumAverageRating = 0;
@@ -60,21 +91,6 @@ function getAverageScore( data ) {
             }
             average = sumAverageRating / sumSchoolSubject;
             return average;
-        }
-    };
-};
-console.log(getAverageScore({algebra: [ 2, 4, 5, 2, 3, 4]}));
-
-function averageRating(...marks) {
-    let averageRating = 0;
-    let sumMarks = 0;
-    for (let i = 0; i < marks.length; i++) {
-        sumMarks += marks[i];
-    }
-    averageRating = sumMarks / marks.length;
-    return averageRating;
-}
-console.log(averageRating(1,2,3,4,5));
 
 //Задание 3
 function getPersonData( secretData ) {
