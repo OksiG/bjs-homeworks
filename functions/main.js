@@ -78,10 +78,6 @@ console.log(averageRating(1,2,3,4,5));
 
 //Задание 3
 function getPersonData( secretData ) {
-    secretData = {
-        aaa: 1,
-        bbb: 1
-    }
     return {
         firstName: returnName(secretData.aaa),
         lastName: returnName(secretData.bbb)
