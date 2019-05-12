@@ -47,23 +47,18 @@ function getAverageScore( data ) {
     let counter = 0;
     let sumSubject = 0;
     let sumAverage = 0;
-    let average = 0;
-    let a;
+    let a = {};
 
     for (let key in data) {
-        a = {
-            key: averageRating(data[key])
-        };
-        console.log(a);
+        a.key = averageRating(data[key]);
+
         sumSubject = counter++;
         sumAverage += averageRating(data[key]);
     };
 
-    //alert(`сумма ср. оценок: ${sumAverage}, сумма предметов: ${sumSubject}`);
-   
-    average = sumAverage / sumSubject;
-
-return a, average;
+    a.average = sumAverage / sumSubject;
+    
+return a;
 }
 
 function averageRating(marks) {
