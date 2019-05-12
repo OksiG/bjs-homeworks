@@ -51,16 +51,15 @@ function getAverageScore( data ) {
     let a;
 
     for (let key in data) {
-        a = `${key}: ${averageRating(data[key])}`;
+        a = {
+            key: averageRating(data[key])
+        };
         console.log(a);
-    }
-
-    for (let key in data) {
         sumSubject = counter++;
         sumAverage += data[key];
-        alert(`сумма ср. оценок: ${sumAverage}, сумма предметов: ${sumSubject}`);
-        return sumSubject, sumAverage;
-        }
+    };
+
+    alert(`сумма ср. оценок: ${sumAverage}, сумма предметов: ${sumSubject}`);
     average = sumAverage / sumSubject;
 
 return a, average;
