@@ -56,10 +56,11 @@ function getAverageScore( data ) {
         };
         console.log(a);
         sumSubject = counter++;
-        sumAverage += data[key];
+        sumAverage += averageRating(data[key]);
     };
 
-    alert(`сумма ср. оценок: ${sumAverage}, сумма предметов: ${sumSubject}`);
+    //alert(`сумма ср. оценок: ${sumAverage}, сумма предметов: ${sumSubject}`);
+   
     average = sumAverage / sumSubject;
 
 return a, average;
