@@ -3,25 +3,24 @@ class Weapon {
     constructor(name, attack, durability, range) {
         this.name = name;
         this.attack = attack;
-        this.durabilityStart = durability;
+        this.durabilityInitial = durability;
         this.range = range;
     }
 
     takeDamage(damage) {
-        this.durabilityEnd = this.durabilityStart - damage;
-        this.durabilityStart = this.durabilityEnd;
+        this.durabilityNow = this.durabilityInitial - damage;
 
-        if (this.durabilityStart < 0) {
-            this.durabilityStart = 0;
+        if (this.durabilityNow < 0) {
+            this.durabilityNow = 0;
         }
 
-        return this.durabilityStart;
+        return this.durabilityNow;
     }
 
     getDamage() {
-        if (this.this.durabilityEnd >= this.durabilityStart * 3 / 10) {
+        if (this.durabilityNow >= this.durabilityInitial * 3 / 10) {
             return this.attack;
-        } else if (this.durabilityEnd === 0) {
+        } else if (this.durabilityNow === 0) {
             return 0;
         } else {
             return this.attack / 2;
@@ -29,7 +28,7 @@ class Weapon {
     }
 
     isBroken() {
-        this.durabilityEnd > 0 ? false : true;
+        this.durabilityNow > 0;
     }
 }
 
