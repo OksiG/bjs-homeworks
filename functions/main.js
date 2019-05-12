@@ -44,28 +44,36 @@ console.log(showSolutionsMessage(1, 2, 3));
 
 //Задание 2
 function getAverageScore( data ) {
-    var counter = 0;
-    var sumSubject = 0;
+    let counter = 0;
+    let sumSubject = 0;
+    let sumAverage = 0;
+    let average = 0;
+    let a;
 
-    for (var key in data) {
-         sumSubject = counter++;
+    for (let key in data) {
+        a = `${key}: ${averageRating(data[key])}`;
+        console.log(a);
     }
 
-    alert(sumSubject);
+    for (let key in data) {
+        sumSubject = counter++;
+        sumAverage += data[key];
+        alert(`сумма ср. оценок: ${sumAverage}, сумма предметов: ${sumSubject}`);
+        return sumSubject, sumAverage;
+        }
+    average = sumAverage / sumSubject;
 
-return {
-algebra: averageRating( data.algebra)
-};
+return a, average;
 }
 
 function averageRating(marks) {
-let averageRating = 0;
-let sumMarks = 0;
-for (let i = 0; i < marks.length; i++) {
-sumMarks += marks[i];
-}
-averageRating = sumMarks / marks.length;
-return averageRating;
+    let averageRating = 0;
+    let sumMarks = 0;
+    for (let i = 0; i < marks.length; i++) {
+        sumMarks += marks[i];
+    }
+    averageRating = sumMarks / marks.length;
+    return averageRating;
 }
 
 console.log(getAverageScore({
@@ -79,18 +87,6 @@ console.log(getAverageScore({
     chemistry: [ 2],
     french: [ 4, 4]
 }));
-
-
-average: function () {
-            let average = 0;
-            let sumSchoolSubject = 0;
-            let sumAverageRating = 0;
-            for (let i = 0; i < schoolSubject.length; i++) {
-                sumSchoolSubject += schoolSubject[i];
-                sumAverageRating += averageRating[i];
-            }
-            average = sumAverageRating / sumSchoolSubject;
-            return average;
 
 //Задание 3
 function getPersonData( secretData ) {
