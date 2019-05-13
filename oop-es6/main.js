@@ -28,7 +28,13 @@ class Weapon {
     }
 
     isBroken() {
-        this.durabilityNow > 0;
+        if (this.durabilityNow < 0) {
+        return true;
+        } else if (this.durabilityInitial < 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
 

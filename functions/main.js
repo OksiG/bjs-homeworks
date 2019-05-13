@@ -50,7 +50,7 @@ function getAverageScore( data ) {
     let a = {};
 
     for (let key in data) {
-        a.key = averageRating(data[key]);
+        a[key] = averageRating(data[key]);                
 
         sumSubject = counter++;
         sumAverage += averageRating(data[key]);
