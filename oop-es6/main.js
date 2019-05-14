@@ -34,11 +34,28 @@ class Weapon {
     }
 }
 
-const sword = new Weapon('Старый меч', 20, 10, 1);
+class Weapon1 extends Weapon {
+    constructor(name, attack, durability, range) {
+        super(name, attack, durability, range)
+    }
+}
+
+class Weapon2 extends Weapon {
+    constructor(name, versionweapon, attack, durability, range) {
+        super(name, attack, durability, range)
+        this.versionweapon = versionweapon;
+    }
+}
+
+const sword = new Weapon('Меч', 25, 500, 1);
 
 const arm = new Weapon('Рука', 1, Infinity, 1);
 
 const bow = new Weapon('Лук', 10, 200, 3);
+
+const knife = new Weapon('Нож', 5, 300, 1);
+
+const crosier = new Weapon('Посох', 8, 300, 2);
 
 sword.takeDamage(5);
 console.log(sword);
