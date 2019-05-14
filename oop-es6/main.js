@@ -5,6 +5,7 @@ class Weapon {
         this.attack = attack;
         this.durabilityInitial = durability;
         this.range = range;
+        this.durabilityNow = this.durabilityInitial;
     }
 
     takeDamage(damage) {
@@ -28,13 +29,8 @@ class Weapon {
     }
 
     isBroken() {
-        if (this.durabilityNow < 0) {
-        return true;
-        } else if (this.durabilityInitial < 0) {
-            return true;
-        } else {
-            return false;
-        }
+        let value = this.durabilityNow < 0;
+        return value;
     }
 }
 
