@@ -53,7 +53,7 @@ function getAverageScore( data ) {
         a[key] = averageRating(data[key]);                
 
         sumSubject = counter++;
-        sumAverage += averageRating(data[key]);
+        sumAverage += a[key];
     };
 
     a.average = sumAverage / sumSubject;
