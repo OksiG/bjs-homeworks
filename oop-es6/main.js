@@ -29,12 +29,11 @@ class Weapon {
     }
 
     isBroken() {
-        let value = this.durabilityNow < 0;
-        return value;
+        return this.durabilityNow === 0;
     }
 }
 
-class Weapon1 extends Weapon {
+class bow extends Weapon {
     constructor(name, attack, durability, range) {
         super(name, attack, durability, range)
     }
@@ -71,6 +70,10 @@ class StudentLog {
     }
 
     addGrade(grade, subject) {
+        let arrGrade = [];
+        
+        arrGrade.push(grade);
+
         if (grade < 1 && grade > 5) {
             alert(`Вы пытались поставить оценку ${grade} по предмету ${subject}. Допускаются только числа от 1 до 5.`);
         }
