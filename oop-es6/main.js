@@ -33,18 +33,11 @@ class Weapon {
     }
 }
 
-class bow extends Weapon {
-    constructor(name, attack, durability, range) {
-        super(name, attack, durability, range)
-    }
-}
-
-class Weapon2 extends Weapon {
-    constructor(name, versionweapon, attack, durability, range) {
-        super(name, attack, durability, range)
-        this.versionweapon = versionweapon;
-    }
-}
+class Bow extends Weapon {
+    constructor() {
+      super(constructor('Лук', 10, 200, 3));   
+    }   
+  }
 
 const sword = new Weapon('Меч', 25, 500, 1);
 
