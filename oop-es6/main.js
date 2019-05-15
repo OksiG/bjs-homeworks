@@ -70,8 +70,7 @@ class LongBow extends Bow {
       this.versionWeapon = 'Лук';  
       this.attack = 15;
       this.durabilityInitial = '-';
-      this.range = 4;
-      this.durabilityNow = this.durabilityInitial;      
+      this.range = 4;   
     }   
 }
 
@@ -82,8 +81,7 @@ class Axe extends Sword {
       this.versionWeapon = 'Меч';  
       this.attack = 27;
       this.durabilityInitial = 800;
-      this.range = '-';
-      this.durabilityNow = this.durabilityInitial;      
+      this.range = '-';    
     }   
 }
 
@@ -94,8 +92,7 @@ class CrosierOfStorm extends Sword {
       this.versionWeapon = 'Посох';  
       this.attack = 10;
       this.durabilityInitial = '-';
-      this.range = 3;
-      this.durabilityNow = this.durabilityInitial;      
+      this.range = 3;     
     }   
 }
 
