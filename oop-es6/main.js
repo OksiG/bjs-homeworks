@@ -35,9 +35,70 @@ class Weapon {
 
 class Bow extends Weapon {
     constructor() {
-      super(constructor('Лук', 10, 200, 3));   
+      super('Лук', 10, 200, 3);   
     }   
   }
+
+class Arm extends Weapon {
+  constructor() {
+    super('Рука', 1, Infinity, 1);   
+  }   
+}
+
+class Sword extends Weapon {
+    constructor() {
+      super('Меч', 25, 500, 1);   
+    }   
+}
+
+class Knife extends Weapon {
+    constructor() {
+      super('Нож', 5, 300, 1);   
+    }   
+}
+
+class Crosier extends Weapon {
+    constructor() {
+      super('Посох', 8, 300, 21);   
+    }   
+}
+
+class LongBow extends Bow {
+    constructor() {
+      super();   
+      this.name = 'Длинный лук';    
+      this.versionWeapon = 'Лук';  
+      this.attack = 15;
+      this.durabilityInitial = '-';
+      this.range = 4;
+      this.durabilityNow = this.durabilityInitial;      
+    }   
+}
+
+class Axe extends Sword {
+    constructor() {
+      super();   
+      this.name = 'Секира';    
+      this.versionWeapon = 'Меч';  
+      this.attack = 27;
+      this.durabilityInitial = 800;
+      this.range = '-';
+      this.durabilityNow = this.durabilityInitial;      
+    }   
+}
+
+class CrosierOfStorm extends Sword {
+    constructor() {
+      super();   
+      this.name = 'Посох Бури';    
+      this.versionWeapon = 'Посох';  
+      this.attack = 10;
+      this.durabilityInitial = '-';
+      this.range = 3;
+      this.durabilityNow = this.durabilityInitial;      
+    }   
+}
+
 
 const sword = new Weapon('Меч', 25, 500, 1);
 
@@ -51,6 +112,8 @@ const crosier = new Weapon('Посох', 8, 300, 2);
 
 sword.takeDamage(5);
 console.log(sword);
+
+const bow = new Bow();
 
 //Задание 3
 class StudentLog {
