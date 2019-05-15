@@ -127,8 +127,13 @@ class StudentLog {
 
     addGrade(grade, subject) {
         let arrGrade = [];
+        let a = {};
         
         arrGrade.push(grade);
+
+        for (let key in subject) {
+            a[key] = arrGrade
+        }
 
         if (grade < 1 && grade > 5) {
             alert(`Вы пытались поставить оценку ${grade} по предмету ${subject}. Допускаются только числа от 1 до 5.`);
