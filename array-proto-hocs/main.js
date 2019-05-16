@@ -1,3 +1,5 @@
+//Задание 1
+
 function compareArrays( arr1, arr2 ) {
     for (let i = 0; i < arrLength( arr1, arr2 ); i++) {
         if (arr1[i] === arr2 [i]) {
@@ -51,3 +53,4 @@ sum( 3, 4 ); // 7
   и повторно не делает вычисления
  */
 mSum( 3, 4 ); // 7
+
