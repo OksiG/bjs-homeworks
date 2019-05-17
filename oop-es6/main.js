@@ -67,9 +67,7 @@ class LongBow extends Bow {
     constructor() {
       super();   
       this.name = 'Длинный лук';    
-      this.versionWeapon = 'Лук';  
       this.attack = 15;
-      this.durabilityInitial = '-';
       this.range = 4;   
     }   
 }
@@ -77,11 +75,10 @@ class LongBow extends Bow {
 class Axe extends Sword {
     constructor() {
       super();   
-      this.name = 'Секира';    
-      this.versionWeapon = 'Меч';  
+      this.name = 'Секира';      
       this.attack = 27;
       this.durabilityInitial = 800;
-      this.range = '-';    
+      this.durabilityNow = this.durabilityInitial;  
     }   
 }
 
@@ -89,15 +86,13 @@ class CrosierOfStorm extends Sword {
     constructor() {
       super();   
       this.name = 'Посох Бури';    
-      this.versionWeapon = 'Посох';  
       this.attack = 10;
-      this.durabilityInitial = '-';
       this.range = 3;     
     }   
 }
 
 
-const sword = new Weapon('Меч', 25, 500, 1);
+const sword = new Weapon('Меч', 25, 500, 1); 
 
 const arm = new Weapon('Рука', 1, Infinity, 1);
 
@@ -122,21 +117,18 @@ class StudentLog {
         return this.name;
     }
 
+    let a = {};
+    let arrGrade = [];
+
     addGrade(grade, subject) {
-        let a = {};
-        let arrGrade = [];
-        
+
         if (grade < 1 && grade > 5) {
             alert(`Вы пытались поставить оценку ${grade} по предмету ${subject}. Допускаются только числа от 1 до 5.`);
-            return grade.length;
-        }
-
-        for (let key in a) {
-            if (subject === a[subjcet]) {
-                a[subject] = arrGrade.push(grade);
-            } else if (subject !== a[subjcet]) {
-                a[subject] = arrGrade.push(grade);
-            }
+            return arrGrade.length;
+        } else if (a.subjcet === subject) {
+            a[subject] = arrGrade.push(grade);
+        } else if (a.subjcet !== subject) {
+            a[subject] = arrGrade.push(grade);
         }
        
         return arrGrade.length;
