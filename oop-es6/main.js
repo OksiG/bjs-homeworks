@@ -111,7 +111,7 @@ const bow = new Bow();
 class StudentLog {
     constructor(name) {
         this.name = name;
-        this.a = {};
+        this.journal = {};
     }
 
     getName() {
@@ -119,34 +119,65 @@ class StudentLog {
     }
 
     addGrade(grade, subject) {
-        let arrGrade = [];
+
         if (grade < 1 && grade > 5) {
             alert(`Вы пытались поставить оценку ${grade} по предмету ${subject}. Допускаются только числа от 1 до 5.`);
-            return arrGrade.length;
-        } else if (this.a.subject === subject) {
-            this.a[subject] = arrGrade;
-            arrGrade.push(grade);
-        } else if (this.a.subject !== subject) {
-            this.a[subject] = arrGrade;
-            arrGrade.push(grade);
+            return this.journal[subject].length;
+        } 
+        
+        if (this.journal[subject] === undefined) {
+            this.journal[subject] = [];
         }
-       
-        return arrGrade.length;
+        
+        this.journal[subject].push(grade);
+           
+        return this.journal[subject].length;
     }
 
     getAverageBySubject(subject) {
+        let sumGrade = 0;
         let getAverage = 0;
-        let sum = 0;
-        for (let i = 0; i < grade.length; i++) {
-            sum += grade[i];
-            getAverage = sum / grade.length;
+
+        if (this.journal[subject] === undefined) {
+            return 0;
         }
+        
+        for (let i = 0; i < this.journal[subject].length; i++) {
+            sumGrade += this.journal[subject][i];
+            getAverage = sumGrade / this.journal[subject].length;
+        }
+        
         return getAverage;
+    }
+
+    getTotalAverage() {
+        let counter = 0;
+        let sumSubject = 0;
+        let sumAverage = 0;
+        let totalAverage = 0;
+
+        for (let key in this.journal) {
+            if (this.journal[key] === undefined) {
+                return 0;
+            } 
+
+            this.journal[key] = this.getAverageBySubject(this.journal[key]);
+            sumAverage += this.journal[key];
+            sumSubject = counter++;
+        }
+    
+        totalAverage = sumAverage / sumSubject;
+
+        return totalAverage;
     }
 }
 
+
 const log = new StudentLog('Олег Никифоров');
 
-console.log(log);
-console.log(log.getName());
-console.log(log.addGrade(3, 'algebra'));
+log.addGrade(2, 'algebra');
+log.addGrade(4, 'algebra');
+log.addGrade(5, 'geometry');
+log.addGrade(4, 'geometry');
+
+console.log(log.getTotalAverage()); // 3,75
