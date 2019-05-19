@@ -107,28 +107,28 @@ console.log(sword);
 
 const bow = new Bow();
 
-//Задание 3
+//Задание 3//
 class StudentLog {
     constructor(name) {
         this.name = name;
+        this.a = {};
     }
 
     getName() {
         return this.name;
     }
 
-    let a = {};
-    let arrGrade = [];
-
     addGrade(grade, subject) {
-
+        let arrGrade = [];
         if (grade < 1 && grade > 5) {
             alert(`Вы пытались поставить оценку ${grade} по предмету ${subject}. Допускаются только числа от 1 до 5.`);
             return arrGrade.length;
-        } else if (a.subjcet === subject) {
-            a[subject] = arrGrade.push(grade);
-        } else if (a.subjcet !== subject) {
-            a[subject] = arrGrade.push(grade);
+        } else if (this.a.subject === subject) {
+            this.a[subject] = arrGrade;
+            arrGrade.push(grade);
+        } else if (this.a.subject !== subject) {
+            this.a[subject] = arrGrade;
+            arrGrade.push(grade);
         }
        
         return arrGrade.length;
