@@ -160,13 +160,10 @@ class StudentLog {
             if (this.journal[key] === undefined) {
                 return 0;
             } 
-
-            this.journal[key] = this.getAverageBySubject(this.journal[key]);
-            sumAverage += this.journal[key];
-            sumSubject = counter++;
+            sumAverage += this.getAverageBySubject(key);
         }
     
-        totalAverage = sumAverage / sumSubject;
+        totalAverage = sumAverage / Object.keys(this.journal).length;
 
         return totalAverage;
     }
