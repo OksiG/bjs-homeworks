@@ -1,10 +1,18 @@
 function setDailyRhythm(wakeUpTime, bedTime) {
     
+    const wake = () => alert('Доброе утро, Вася');
+        checkOneTime = setAlarm(wakeUpTime, wake);
+
+    const bed = () => alert('Спокойной ночи, Вася!'),
+        checkTwoTime = setAlarm(bedTime, bed);
+    
+    setInterval(checkOneTime, 1000, new Date());
+
+    setInterval(checkTwoTime, 1000, new Date());
 }
 
 function setAlarm(time, callback) {
     return function (data) {
-        data = new Date ();
         let hour = data.getHours();
         let minutes = data.getMinutes();
         
@@ -25,9 +33,4 @@ function setAlarm(time, callback) {
     }
 }
 
-const goodMorning = () => alert('Доброе утро!'),
-	checkTime = setAlarm('07:00', goodMorning);
-
-checkTime('07:30');
-
-checkTime('07:00'); // Доброе утро
+setDailyRhythm('07:00', '11:22');
