@@ -1,26 +1,24 @@
 //Задание 1
 
 function compareArrays( arr1, arr2 ) {
-    for (let i = 0; i < arrLength( arr1, arr2 ); i++) {
-        if (arr1[i] === arr2 [i]) {
-            return true;
-        } else {
-            return false;
+    if (arr1.length !== arr2.length) {
+        return false;
+    } else if (arr1.length === arr2.length) {
+        checkMassiv(arr1, arr2);
+        return true;
+    }
+
+    function checkMassiv (arr1, arr2) {
+        for (let i = 0; i < arr1.length; i++) {
+            if (arr1[i] === arr2 [i]) {
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 }
 
-function arrLength ( arr1, arr2 ) {
-    let j = 0; 
-
-    if (arr1.length <= arr2.length) {
-        j = arr2.length;
-        return j;
-    } else if (arr2.length <= arr1.length) {
-        j = arr1.length;
-        return j;
-    }
-}
 
 compareArrays([8, 9], [6]); // false, разные значения
 compareArrays([8, 9, 5, 4], [8, 9, 5, 4, 8, 3, 5]); // false, разные значения

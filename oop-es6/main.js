@@ -151,8 +151,6 @@ class StudentLog {
     }
 
     getTotalAverage() {
-        let counter = 0;
-        let sumSubject = 0;
         let sumAverage = 0;
         let totalAverage = 0;
 
